@@ -102,6 +102,7 @@ svg { display: block; }
 }
 .btn-dark:hover { background: transparent; color: var(--black); border-color: var(--black); }
 
+
 .btn-block { display: block; text-align: center; }
 
 /* ============================================= */
@@ -621,6 +622,82 @@ svg { display: block; }
 .section-cta {
     text-align: center;
     margin-top: 2.5rem;
+}
+
+/* ============================================= */
+/* BRANDS                                        */
+/* ============================================= */
+.brands-section {
+    background: var(--off-white);
+    padding: 3.5rem 2rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.brands-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.brands-inner .eyebrow {
+    margin-bottom: 2.25rem;
+}
+
+.brands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 3rem;
+}
+
+.brand-item {
+    width: 160px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.brand-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.45);
+    transition: filter 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.brand-item:hover img {
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.06);
+}
+
+/* Ralph Lauren — portrait logo needs taller cell */
+.brand-ralph-lauren {
+    height: 100px;
+}
+
+/* Diesel & Puma — scale down to visually match other logos */
+.brand-diesel img {
+    max-height: 38px;
+}
+
+.brand-puma img {
+    max-height: 36px;
+}
+
+@media (max-width: 768px) {
+    .brand-item { width: 130px; height: 58px; }
+    .brand-ralph-lauren { height: 80px; }
+}
+
+@media (max-width: 480px) {
+    .brands-grid { gap: 1.5rem 2rem; }
+    .brand-item { width: 110px; height: 50px; }
+    .brand-ralph-lauren { height: 68px; }
 }
 
 /* ============================================= */
