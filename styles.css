@@ -113,8 +113,15 @@ svg { display: block; }
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 900;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+
+#navbar.scrolled {
     background: #ffffff;
     border-bottom: 1px solid rgba(0,0,0,0.07);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
 .nav-inner {
@@ -142,7 +149,7 @@ svg { display: block; }
     font-weight: 500;
     letter-spacing: 0.17em;
     text-transform: uppercase;
-    color: var(--black);
+    color: rgba(255,255,255,0.85);
     transition: color 0.2s;
     position: relative;
     padding-bottom: 2px;
@@ -156,8 +163,10 @@ svg { display: block; }
     background: currentColor;
     transition: width 0.3s var(--ease);
 }
-.nav-links a:hover { color: var(--red); }
 .nav-links a:hover::after { width: 100%; }
+
+#navbar.scrolled .nav-links a { color: var(--black); }
+#navbar.scrolled .nav-links a:hover { color: var(--red); }
 
 .nav-logo {
     position: absolute;
@@ -188,10 +197,12 @@ svg { display: block; }
 .hamburger span {
     display: block;
     width: 22px; height: 1.5px;
-    background: var(--black);
+    background: rgba(255,255,255,0.9);
     border-radius: 2px;
     transition: all 0.3s;
 }
+
+#navbar.scrolled .hamburger span { background: var(--black); }
 .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 4.5px); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -4.5px); }

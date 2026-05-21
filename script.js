@@ -1,12 +1,10 @@
 /* House of Style — Main Script */
 
-// --- Sticky Nav shadow on scroll ---
+// --- Transparent nav → white on scroll ---
 const navbar = document.getElementById('navbar');
 
 function updateNav() {
-    navbar.style.boxShadow = window.scrollY > 10
-        ? '0 2px 16px rgba(0,0,0,0.08)'
-        : 'none';
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
 }
 window.addEventListener('scroll', updateNav, { passive: true });
 updateNav();
